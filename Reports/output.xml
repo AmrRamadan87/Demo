@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-03-17T10:49:48.906842" rpa="false" schemaversion="5">
+<suite id="s1" name="LoginTest" source="C:\Development\Demo\Demo\Tests\LoginTest.robot">
+<test id="s1-t1" name="Verify that user can login successfully" line="20">
+<kw name="Open HRM site" owner="PageBase" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-03-17T10:49:49.232853" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-03-17T10:49:49.232853" elapsed="2.423876"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-03-17T10:49:51.659730" level="INFO">Opening url 'https://opensource-demo.orangehrmlive.com/'</msg>
+<arg>${HRM_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-03-17T10:49:51.658728" elapsed="3.813319"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-03-17T10:49:55.474142" elapsed="0.115354"/>
+</kw>
+<status status="PASS" start="2024-03-17T10:49:49.231849" elapsed="6.357647"/>
+</kw>
+<kw name="Login to HRM with valid data" owner="LoginPage">
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>0.2s</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2024-03-17T10:49:55.592481" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${USERNAME_FIELD}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-03-17T10:49:55.593480" elapsed="0.851341"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-03-17T10:49:56.445820" level="INFO">Typing text 'Admin' into text field 'xpath=//input[@name='username']'.</msg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>${USERNAME_VALUE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-17T10:49:56.444821" elapsed="0.721354"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-03-17T10:49:57.169128" level="INFO">Typing text 'admin123' into text field 'xpath=//input[@type='password']'.</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${PASSWORD_VALUE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-17T10:49:57.168108" elapsed="0.735302"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-03-17T10:49:57.904408" level="INFO">Clicking element 'xpath=//button[@type='submit']'.</msg>
+<arg>${SUBMIT_BUTTON_LOGIN_PAGE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-17T10:49:57.904408" elapsed="0.477356"/>
+</kw>
+<arg>${USERNAME}</arg>
+<arg>${PASSWORD}</arg>
+<status status="PASS" start="2024-03-17T10:49:55.591482" elapsed="2.792280"/>
+</kw>
+<kw name="Verify that user logged successfully" owner="LoginPage">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2024-03-17T10:49:59.589851" level="INFO">Current page contains text 'Dashboard'.</msg>
+<arg>Dashboard</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2024-03-17T10:49:58.384744" elapsed="1.205107"/>
+</kw>
+<status status="PASS" start="2024-03-17T10:49:58.384744" elapsed="1.207109"/>
+</kw>
+<kw name="Close web browser" owner="PageBase" type="TEARDOWN">
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2024-03-17T10:49:59.594850" elapsed="2.366487"/>
+</kw>
+<status status="PASS" start="2024-03-17T10:49:59.593850" elapsed="2.367487"/>
+</kw>
+<doc>Login with valid data</doc>
+<tag>Smoke</tag>
+<status status="PASS" start="2024-03-17T10:49:49.230850" elapsed="12.731473"/>
+</test>
+<doc>This is a Demo for Task Automation Test</doc>
+<status status="PASS" start="2024-03-17T10:49:48.984798" elapsed="12.986534"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Smoke</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="LoginTest">LoginTest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
