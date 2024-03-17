@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-03-17T12:06:57.546514" rpa="false" schemaversion="5">
+<suite id="s1" name="02-AddLeaveSuccessfully" source="C:\Development\Demo\Demo\tests\02-AddLeaveSuccessfully.robot">
+<test id="s1-t1" name="Validate adding a new leave" line="22">
+<kw name="Open HRM site" owner="PageBase" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-03-17T12:06:57.989259" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-03-17T12:06:57.989259" elapsed="3.140191"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-03-17T12:07:01.130450" level="INFO">Opening url 'https://opensource-demo.orangehrmlive.com/'</msg>
+<arg>${HRM_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-03-17T12:07:01.130450" elapsed="3.141188"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-03-17T12:07:04.271638" elapsed="0.130925"/>
+</kw>
+<status status="PASS" start="2024-03-17T12:06:57.988260" elapsed="6.415302"/>
+</kw>
+<kw name="Login to HRM with valid data" owner="LoginPage">
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>0.2s</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2024-03-17T12:07:04.404563" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${USERNAME_FIELD}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-03-17T12:07:04.405560" elapsed="0.951468"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-03-17T12:07:05.357028" level="INFO">Typing text 'Admin' into text field 'xpath=//input[@name='username']'.</msg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>${USERNAME_VALUE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-17T12:07:05.357028" elapsed="0.720569"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-03-17T12:07:06.078598" level="INFO">Typing text 'admin123' into text field 'xpath=//input[@type='password']'.</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${PASSWORD_VALUE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-17T12:07:06.077597" elapsed="0.725581"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-03-17T12:07:06.803178" level="INFO">Clicking element 'xpath=//button[@type='submit']'.</msg>
+<arg>${SUBMIT_BUTTON_LOGIN_PAGE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-17T12:07:06.803178" elapsed="1.464156"/>
+</kw>
+<arg>${USERNAME}</arg>
+<arg>${PASSWORD}</arg>
+<status status="PASS" start="2024-03-17T12:07:04.404563" elapsed="3.862771"/>
+</kw>
+<kw name="Adding leave with valid data successfully" owner="LeavePage">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-03-17T12:07:13.269518" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-03-17T12:07:08.269333" elapsed="5.000185"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2024-03-17T12:07:13.270536" level="INFO">Clicking link 'link:Leave'.</msg>
+<arg>${Leave_Button}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-17T12:07:13.269518" elapsed="1.286803"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ASSIGN_BUTTON}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-03-17T12:07:14.556321" elapsed="0.861505"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2024-03-17T12:07:15.417826" level="INFO">Clicking link 'xpath=//a[contains(.,'Assign Leave')]'.</msg>
+<arg>${ASSIGN_BUTTON}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-17T12:07:15.417826" elapsed="1.099365"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${EMPLOYEE_NAME}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-03-17T12:07:16.517191" elapsed="0.854021"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-03-17T12:07:17.371212" level="INFO">Typing text 'Rahul' into text field 'xpath=//input[@placeholder='Type for hints...']'.</msg>
+<arg>${EMPLOYEE_NAME}</arg>
+<arg>Rahul</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-17T12:07:17.371212" elapsed="0.738574"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-03-17T12:07:23.111348" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-03-17T12:07:18.109786" elapsed="5.001562"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-03-17T12:07:23.112351" level="INFO">Sending key(s) ('ARROW_DOWN',) to page.</msg>
+<msg time="2024-03-17T12:07:23.112351" level="INFO">Pressing special key ARROW_DOWN to browser.</msg>
+<msg time="2024-03-17T12:07:23.112351" level="INFO">Releasing special key ARROW_DOWN.</msg>
+<arg>NONE</arg>
+<arg>ARROW_DOWN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-03-17T12:07:23.111348" elapsed="0.214861"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-03-17T12:07:28.327942" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-03-17T12:07:23.326209" elapsed="5.001733"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-03-17T12:07:28.328946" level="INFO">Sending key(s) ('ENTER',) to page.</msg>
+<msg time="2024-03-17T12:07:28.328946" level="INFO">Pressing special key ENTER to browser.</msg>
+<msg time="2024-03-17T12:07:28.328946" level="INFO">Releasing special key ENTER.</msg>
+<arg>NONE</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-03-17T12:07:28.327942" elapsed="0.215882"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-03-17T12:07:33.544180" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-03-17T12:07:28.543824" elapsed="5.000356"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-03-17T12:07:33.544180" level="INFO">Clicking element 'xpath=//div[@class='oxd-select-text-input'][contains(.,'-- Select --')]'.</msg>
+<arg>${LEAVE_TYPE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-17T12:07:33.544180" elapsed="0.462735"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-03-17T12:07:34.007915" level="INFO">Sending key(s) ('ARROW_DOWN',) to page.</msg>
+<msg time="2024-03-17T12:07:34.007915" level="INFO">Pressing special key ARROW_DOWN to browser.</msg>
+<msg time="2024-03-17T12:07:34.007915" level="INFO">Releasing special key ARROW_DOWN.</msg>
+<arg>NONE</arg>
+<arg>ARROW_DOWN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-03-17T12:07:34.006915" elapsed="0.212876"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-03-17T12:07:39.220035" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-03-17T12:07:34.219791" elapsed="5.000244"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-03-17T12:07:39.221035" level="INFO">Sending key(s) ('ENTER',) to page.</msg>
+<msg time="2024-03-17T12:07:39.221035" level="INFO">Pressing special key ENTER to browser.</msg>
+<msg time="2024-03-17T12:07:39.221035" level="INFO">Releasing special key ENTER.</msg>
+<arg>NONE</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-03-17T12:07:39.220035" elapsed="0.216874"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-03-17T12:07:44.437134" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-03-17T12:07:39.436909" elapsed="5.000225"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-03-17T12:07:44.438134" level="INFO">Typing text '2024-15-03' into text field 'xpath=(//input[@placeholder='yyyy-dd-mm'])[1]'.</msg>
+<arg>${DATE_FIELD}</arg>
+<arg>2024-15-03</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-17T12:07:44.437134" elapsed="0.698597"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-03-17T12:07:50.137475" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-03-17T12:07:45.136731" elapsed="5.000744"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-03-17T12:07:50.138476" level="INFO">Sending key(s) ('TAB',) to page.</msg>
+<msg time="2024-03-17T12:07:50.138476" level="INFO">Pressing special key TAB to browser.</msg>
+<msg time="2024-03-17T12:07:50.138476" level="INFO">Releasing special key TAB.</msg>
+<arg>NONE</arg>
+<arg>TAB</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-03-17T12:07:50.137475" elapsed="0.222873"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-03-17T12:07:55.360563" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-03-17T12:07:50.360348" elapsed="5.000215"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-03-17T12:07:55.360563" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<arg>${SUBMIT_BUTTON_Leave}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-17T12:07:55.360563" elapsed="1.090377"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${OK_BUTTON_Leave}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-03-17T12:07:56.450940" elapsed="0.838514"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-03-17T12:07:57.291454" level="INFO">Clicking button 'xpath=//button[@type='button'][contains(.,'Ok')]'.</msg>
+<arg>${OK_BUTTON_Leave}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-17T12:07:57.290456" elapsed="1.075379"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-03-17T12:08:03.366143" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-03-17T12:07:58.365835" elapsed="5.000308"/>
+</kw>
+<status status="PASS" start="2024-03-17T12:07:08.268334" elapsed="55.097809"/>
+</kw>
+<kw name="Close web browser" owner="PageBase" type="TEARDOWN">
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2024-03-17T12:08:03.367147" elapsed="2.356511"/>
+</kw>
+<status status="PASS" start="2024-03-17T12:08:03.367147" elapsed="2.356511"/>
+</kw>
+<status status="PASS" start="2024-03-17T12:06:57.986263" elapsed="67.738395"/>
+</test>
+<doc>This is a Demo for Task Automation Test</doc>
+<status status="PASS" start="2024-03-17T12:06:57.549512" elapsed="68.176145"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="02-AddLeaveSuccessfully">02-AddLeaveSuccessfully</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
