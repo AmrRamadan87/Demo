@@ -22,6 +22,7 @@ ${PASSWORD}           admin123
 Validate adding a new leave
     Login to HRM with valid data                    ${USERNAME}       ${PASSWORD}
     Adding leave with valid data successfully
+    Verify that appearing sweet message
 
 
 

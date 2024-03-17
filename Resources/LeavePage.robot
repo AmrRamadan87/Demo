@@ -40,7 +40,9 @@ Adding leave with valid data successfully
     click button                      ${SUBMIT_BUTTON_Leave}
     wait until element is visible     ${OK_BUTTON_Leave}
     click button                      ${OK_BUTTON_Leave}
-    sleep                             5s
+    sleep                             2s
+Verify that appearing sweet message
+    page should contain               Success
 
 
 
